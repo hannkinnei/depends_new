@@ -154,5 +154,12 @@
 			<artifactId>jrubyparser</artifactId>
 			<version>0.5.5-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>depends</groupId>
+			<artifactId>antlr4</artifactId>
+			<version>final</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/antlr4.depends.jar</systemPath>
+		</dependency>
 	</dependencies>
 </project>
