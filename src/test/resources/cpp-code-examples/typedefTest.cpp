@@ -1,2 +1,4 @@
-typedef struct abc {
-} abc_t;
+typedef int MyInt;
+
+void foo(MyInt a){
+}
