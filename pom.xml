@@ -30,13 +30,13 @@
 				<groupId>org.antlr</groupId>
 				<artifactId>antlr4-maven-plugin</artifactId>
 				<version>4.7.1</version>
-				<executions>
+				<!-- <executions>
 					<execution>
 						<goals>
 							<goal>antlr4</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions> -->
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
