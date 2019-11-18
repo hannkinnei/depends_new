@@ -103,36 +103,50 @@
 			<groupId>org.eclipse.cdt</groupId>
 			<artifactId>org.eclipse.cdt.core</artifactId>
 			<version>6.5.0.201806170908</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/org.eclipse.cdt.core-6.5.0.201806170908.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>eclipse-photon</groupId>
 			<artifactId>org.eclipse.equinox.registry</artifactId>
 			<version>3.8.0.v20180426-1327</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/org.eclipse.equinox.registry-3.8.0.v20180426-1327.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>eclipse-photon</groupId>
 			<artifactId>org.eclipse.core.runtime</artifactId>
 			<version>3.14.0.v20180417-0825</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/org.eclipse.core.runtime-3.14.0.v20180417-0825.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>eclipse-photon</groupId>
 			<artifactId>org.eclipse.equinox.common</artifactId>
 			<version>3.10.0.v20180412-1130</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/org.eclipse.equinox.common-3.10.0.v20180412-1130.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>eclipse-photon</groupId>
 			<artifactId>org.eclipse.osgi</artifactId>
 			<version>3.13.0.v20180409-1500</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/org.eclipse.osgi-3.13.0.v20180409-1500.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>eclipse-photon</groupId>
 			<artifactId>org.eclipse.equinox.preferences</artifactId>
 			<version>3.7.100.v20180510-1129</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/org.eclipse.equinox.preferences-3.7.100.v20180510-1129.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>eclipse-photon</groupId>
 			<artifactId>org.eclipse.core.jobs</artifactId>
 			<version>3.10.0.v20180427-1454</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/org.eclipse.core.jobs-3.10.0.v20180427-1454.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>info.picocli</groupId>
@@ -159,6 +173,15 @@
 			<groupId>org.jruby</groupId>
 			<artifactId>jrubyparser</artifactId>
 			<version>0.5.5-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/jrubyparser-0.5.5-SNAPSHOT.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>depends</groupId>
+			<artifactId>antlr4</artifactId>
+			<version>final</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/jars/antlr4.depends.jar</systemPath>
 		</dependency>
 	</dependencies>
 </project>
