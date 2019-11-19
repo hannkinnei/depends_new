@@ -41,6 +41,7 @@ public class RelationCounter {
 	
 	private void computeContainerRelations(ContainerEntity entity) {
 		for (VarEntity var:entity.getVars()) {
+			System.out.println(var.getType());
 			if (var.getType()!=null)
 				entity.addRelation(new Relation(DependencyType.CONTAIN,var.getType()));
 			for (TypeEntity type:var.getResolvedTypeParameters()) {
