@@ -12,6 +12,7 @@ import depends.entity.Entity;
 import depends.entity.FileEntity;
 import depends.entity.MultiDeclareEntities;
 import depends.entity.TypeEntity;
+import depends.entity.VarEntity;
 import depends.entity.repo.BuiltInType;
 import depends.entity.repo.EntityRepo;
 import depends.entity.repo.NullBuiltInType;
@@ -166,6 +167,9 @@ public class Inferer {
 		}
 
 		Entity inferData = findEntityUnderSamePackage(fromEntity, name);
+		if(fromEntity instanceof VarEntity) {
+			System.out.println(fromEntity + " " + inferData);
+		}
 		if (inferData != null)
 			return inferData;
 		if (searcImport)
