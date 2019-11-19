@@ -14,16 +14,18 @@ import depends.entity.TypeEntity;
 import depends.extractor.FileParser;
 import depends.relations.Relation;
 
-public class MyJavaTest extends JavaParserTest{
+public class MyJavaTestNoExtend extends JavaParserTest{
 	@Before
 	public void setUp() {
 		super.init();
 	}
+	
+
 	@Test
-	public void test() throws IOException {
+	public void test_no_extend() throws IOException {
 		String[] srcs = new String[] {
-	    		"./src/test/resources/java-code-examples/MyJavaTest/test/A.java",
-	    		"./src/test/resources/java-code-examples/MyJavaTest/test/B.java"
+	    		"./src/test/resources/java-code-examples/MyJavaTest/test_no_extend/A.java",
+	    		"./src/test/resources/java-code-examples/MyJavaTest/test_no_extend/B.java"
 	    	    };
 	    
 	    for (String src:srcs) {
@@ -31,13 +33,12 @@ public class MyJavaTest extends JavaParserTest{
 		    parser.parse();
 	    }
 	    inferer.resolveAllBindings();
-	    TypeEntity type = (TypeEntity)(entityRepo.getEntity("test.B"));
+	    TypeEntity type = (TypeEntity)(entityRepo.getEntity("test_no_extend.B"));
 	    List<Relation> relations = type.getRelations();
 	    for(Relation relation : relations) {
 	    	System.out.println(relation.getType() + " " + relation.getEntity());
 	    }
-	    assertTrue(assertRelation(type, DependencyType.CONTAIN, "test.A")
-	    		&& assertRelation(type, DependencyType.INHERIT, "test.A"));
+	    assertTrue(assertRelation(type, DependencyType.CONTAIN, "test_no_extend.A"));
 	}
 	
 	protected boolean assertRelation(Entity inEntity, String dependencyType, String dependedEntityFullName) {

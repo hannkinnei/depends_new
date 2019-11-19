@@ -236,7 +236,9 @@ public class Inferer {
 			}
 		}
 
+		System.out.println("-------------------------" + fromEntity.getClass().getSimpleName() + " " + fromEntity + " " + name + "-----------------------------");
 		Entity inferData = findEntityUnderSamePackage(fromEntity, name);
+		System.out.println("findEntityUnderSamePackage的结果：" + fromEntity + " " + inferData);
 		if (inferData != null) {
 			return inferData;
 		}
@@ -271,6 +273,7 @@ public class Inferer {
 	}
 
 	public Entity lookupTypeInImported(FileEntity fileEntity, String name) {
+		System.out.println("执行了lookupTypeInImported方法");
 		if (fileEntity == null)
 			return null;
 		Entity type = importLookupStrategy.lookupImportedType(name, fileEntity, repo,this);
@@ -288,7 +291,9 @@ public class Inferer {
 	 * @return
 	 */
 	private Entity findEntityUnderSamePackage(Entity fromEntity, String name) {
+		System.out.println(fromEntity.getClass() + " " + fromEntity);
 		while (true) {
+			System.out.println("++++ " + fromEntity.getClass() + " " + fromEntity);
 			Entity entity = tryToFindEntityWithName(fromEntity, name);
 			if (entity != null)
 				return entity;
@@ -303,8 +308,13 @@ public class Inferer {
 					searchedTypes.add(type);
 					if (type.getInheritedTypes().size()==0) break;
 					for (TypeEntity child:type.getInheritedTypes()) {
+//						if (child.getRawName().getName().equals(name))
+//						return child;
 						entity = findEntityInChild(child,name);
-						if (entity!=null) return entity;
+						if (entity!=null) {
+							System.out.println("------------" + fromEntity + entity.getClass() + " " + entity);
+							return entity;
+						}
 						type = child;
 					}
 				}
