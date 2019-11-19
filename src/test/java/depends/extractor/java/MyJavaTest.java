@@ -32,6 +32,12 @@ public class MyJavaTest extends JavaParserTest{
 		    parser.parse();
 	    }
 	    inferer.resolveAllBindings();
+	    entityRepo.getEntities().forEach(entity -> {
+	    	System.out.println(entity);
+	    	entity.getRelations().forEach(relation -> {
+	    		System.out.println("- " + relation.getType() + " " + relation.getEntity());
+	    	});
+	    });
 	    TypeEntity type = (TypeEntity)(entityRepo.getEntity("test.B"));
 	    List<Relation> relations = type.getRelations();
 	    for(Relation relation : relations) {
