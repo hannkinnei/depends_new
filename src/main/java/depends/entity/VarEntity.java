@@ -37,7 +37,9 @@ public class VarEntity extends ContainerEntity {
 	public void inferLocalLevelEntities(Inferer inferer) {
 		super.inferLocalLevelEntities(inferer);
 		Entity entity = inferer.resolveName(this, rawType, true);
+		System.out.println("VarEntity inferLocalLevelEntities1 " + entity);
 		if (entity==null) return;
+		System.out.println("VarEntity inferLocalLevelEntities2 " + entity.getType());
 		type = entity.getType();
 		if (type==null) {
 			if (((ContainerEntity)getParent()).isGenericTypeParameter(rawType)) {
